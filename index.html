@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Grade Checker</title>
+    <style>
+       body{
+        background-image:url(gradient-glassmorphism-background_23-2149433264\ -\ Copy.jpg);
+        background-repeat: no-repeat;
+        background-size: cover;
+      
+
+                  
+       }
+        .container {
+            text-align: center;
+            margin-top: 323px;
+        }
+        h1{
+             color: #F38546;
+             font-family: 'Times New Roman', Times, serif;
+             font-size: 67px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Grade Checker</h1>
+        <form id="gradeForm" style="color: #0e9eca; font-size: 34px;">
+            Enter your percentage: <input type="text" id="percentage" required>
+            <input type="submit" style="color: #F38546; background-color: #0e9eca;" value="Check Grade">
+        </form>
+        <p  style="color: #F38546; font-size: 34px;"  id="result"></p>
+    </div>
+
+    <script>
+        document.getElementById("gradeForm").addEventListener("submit", function (event) {
+            event.preventDefault();
+
+            // Get the input value and convert it to a number
+            var percentage = parseFloat(document.getElementById("percentage").value);
+
+            // Check the grade using if-else if statements
+            var grade;
+            if (percentage >= 80) {
+                grade = "A+";
+            } else if (percentage >= 70) {
+                grade = "A";
+            } else if (percentage >= 60) {
+                grade = "B";
+            } else if (percentage >= 50) {
+                grade = "C";
+            } else {
+                grade = "F";
+            }
+
+            // Display the result
+            document.getElementById("result").textContent = "Your grade is: " + grade;
+        });
+    </script>
+</body>
+</html>
